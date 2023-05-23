@@ -6,9 +6,9 @@ export const MyToken = ({btntext,isconnected,isConnected,Connected}) => {
 
   useEffect(() => {
     Connected()
-       getdata()
+    getdata()
     
-  }, []);
+  },[]);
 
   const getdata = (e) => {
 
@@ -26,7 +26,6 @@ export const MyToken = ({btntext,isconnected,isConnected,Connected}) => {
           {console.log(data?.product?.length)}
           {data?.product?.length && (
             data.product.map((user, key) => {
-              { console.log(user) }
 
               return (
 
