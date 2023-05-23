@@ -38,7 +38,7 @@ useEffect(()=>{
       imageData.append('image', image);
 
       try {
-        const imageResponse = await fetch('http://localhost:3000/imageupload', {
+        const imageResponse = await fetch('https://api-nft-auction.onrender.com/imageupload', {
           method: 'post',
           body: imageData,
         })
@@ -54,7 +54,7 @@ useEffect(()=>{
           var newtimeline = (parseInt(timeline) * 1000) + new Date().getTime();
           const mint = await erc1155contract.mintERC1155(tokenid, tokenid, amount, ethers.utils.parseEther(price.toString()), imageIPFSLink, choice, timeline, { value: value })
           await mint.wait(1);
-          const response = fetch('http://localhost:3000/product', {
+          const response = fetch('https://api-nft-auction.onrender.com/product', {
             method: 'post',
             body: JSON.stringify({
               tokenid: tokenid,

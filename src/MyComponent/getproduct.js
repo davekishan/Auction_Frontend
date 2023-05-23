@@ -18,7 +18,7 @@ export const GetProduct = ({ btntext, setloader, erc1155address, productcontract
     if (tokendbib) {
       setIsLoading(true)
       document.getElementsByTagName('body')[0].style.overflow = 'hidden';
-      fetch("http://localhost:3000/bidproduct/" + tokendbib)
+      fetch("https://api-nft-auction.onrender.com/bidproduct/" + tokendbib)
         .then(response => response.json())
         .then(data => setbiddata(data))
       setIsLoading(false)
@@ -79,7 +79,7 @@ export const GetProduct = ({ btntext, setloader, erc1155address, productcontract
 
   const getdata = () => {
 
-    fetch("http://localhost:3000/getproduct")
+    fetch("https://api-nft-auction.onrender.com/getproduct")
       .then(response => response.json())
       .then(data => setData(data))
 

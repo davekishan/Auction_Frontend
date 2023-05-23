@@ -13,7 +13,7 @@ export const MyToken = ({btntext,isconnected,isConnected,Connected}) => {
   const getdata = (e) => {
 
       console.log("this is get data"+btntext)
-      fetch("http://localhost:3000/gettoken/"+btntext)
+      fetch("https://api-nft-auction.onrender.com/gettoken/"+btntext)
       .then(response => response.json())
       .then(data => setData(data))
     

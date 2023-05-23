@@ -25,7 +25,7 @@ console.log(isconnected)
     try {
       const mint = await productcontract.placebid(tokenid, ethers.utils.parseEther(bidvalue.toString()))
       await mint.wait(1);
-      const response = fetch('http://localhost:3000/biding', {
+      const response = fetch('https://api-nft-auction.onrender.com/biding', {
         method: 'post',
         body: JSON.stringify({
           tokenid: tokenid,
