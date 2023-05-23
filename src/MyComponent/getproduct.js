@@ -43,7 +43,7 @@ export const GetProduct = ({ btntext, setloader, erc1155address, productcontract
         console.log(ethvalue.toString());
         const buy = await productcontract.buy_now(tokenid, amount, erc1155address, { value: ethvalue });
         await buy.wait(1)
-        const response = fetch('http://localhost:3000/buying', {
+        const response = fetch('https://api-nft-auction.onrender.com/buying', {
           method: 'post',
           body: JSON.stringify({
             tokenid: tokenid,

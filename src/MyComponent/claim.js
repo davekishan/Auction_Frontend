@@ -16,7 +16,7 @@ export const Claim = ({btntext,productcontract,erc1155address,isconnected,Connec
       alert("Please Connect Wallet")
     }else
     {
-      fetch("http://localhost:3000/claim/"+btntext)
+      fetch("https://api-nft-auction.onrender.com/claim/"+btntext)
         .then(response => response.json())
         .then(data => setData(data))
     }
@@ -29,7 +29,7 @@ export const Claim = ({btntext,productcontract,erc1155address,isconnected,Connec
         const ethvalue=ethers.utils.parseEther((lastbiding * amount).toString())
         const buy = await productcontract.Claimbid(tokenid, amount, erc1155address,{value:ethvalue})
         await buy.wait(1);
-        const response = fetch('http://localhost:3000/claimbid', {
+        const response = fetch('https://api-nft-auction.onrender.com/claimbid', {
           method: 'post',
           body: JSON.stringify({
             tokenid: tokenid,
