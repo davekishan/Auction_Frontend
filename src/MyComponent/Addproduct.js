@@ -72,7 +72,7 @@ useEffect(()=>{
             }
           })
             .then((response) => response.json())
-            .then(async () => {
+            .then(() => {
               setIsLoading(false)
               alert("Data Added")
               document.getElementsByTagName('body')[0].style.overflow = 'visible';
